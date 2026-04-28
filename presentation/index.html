@@ -6,7 +6,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg:#efe6da;--bg2:#e6dac8;--ink:#044e52;--ink2:#2a5f62;
+    --bg:#efe6da;--bg2:#e6dac8;--bg3:#ddeae7;--ink:#044e52;--ink2:#2a5f62;
     --muted:#6a8080;--hair:#c8b99a;--accent:#B8922A;--rust:#b84a2b;
     --f-disp:"Instrument Serif","Cormorant Garamond",Georgia,serif;
     --f-body:"Geist",ui-sans-serif,system-ui,sans-serif;
@@ -93,7 +93,7 @@
   .history-callout p{font-size:.85rem;color:var(--ink2);line-height:1.75;max-width:100%}
 
   /* AI RISK */
-  .airisk-section{background:var(--bg);padding:7rem 0}
+  .airisk-section{background:var(--bg3);padding:7rem 0}
   .airisk-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-top:4rem;align-items:start}
   .airisk-block h3{font-family:var(--f-disp);font-size:1.4rem;color:var(--ink);margin-bottom:1.2rem}
   .framework-item{padding:1rem 0;border-bottom:1px solid var(--hair)}
@@ -127,12 +127,18 @@
   .participant-type p{font-size:.85rem;color:var(--ink2);line-height:1.6;margin:0}
 
   /* FRAMEWORKS */
-  .frameworks-section{background:var(--bg);padding:7rem 0}
+  .frameworks-section{background:var(--ink);padding:7rem 0}
+  .frameworks-section .eyebrow{color:rgba(239,230,218,.3)}
+  .frameworks-section .eyebrow::before{background:rgba(239,230,218,.15)}
+  .frameworks-section .section-title{color:var(--bg)}
   .fw-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:3.5rem}
-  .fw-card{background:var(--bg2);display:flex;flex-direction:column}
-  .fw-head{background:var(--ink);padding:1.6rem 2.2rem}
+  .fw-card{background:rgba(239,230,218,.05);border:1px solid rgba(239,230,218,.08);display:flex;flex-direction:column}
+  .fw-head{background:rgba(239,230,218,.1);padding:1.6rem 2.2rem;border-bottom:1px solid rgba(239,230,218,.12)}
   .fw-head h3{font-family:var(--f-disp);font-size:1.8rem;color:var(--bg);margin-bottom:4px}
   .fw-head .fw-sub{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(239,230,218,.4)}
+  .fw-list li{color:rgba(239,230,218,.75)!important}
+  .fw-list li::before{color:rgba(239,230,218,.25)!important}
+  .fw-list strong{color:rgba(239,230,218,.92)!important}
   .fw-body{padding:1.8rem 2rem}
   .fw-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
   .fw-list li{display:flex;gap:12px;font-size:.87rem;color:var(--ink);line-height:1.6}
@@ -164,7 +170,13 @@
   .theme-quote-block cite{font-family:var(--f-mono);font-style:normal;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 
   /* DATA SOVEREIGNTY */
-  .sovereignty-section{background:var(--bg2);padding:7rem 0}
+  .sovereignty-section{background:var(--ink);padding:7rem 0}
+  .sovereignty-section .eyebrow{color:rgba(239,230,218,.3)}
+  .sovereignty-section .eyebrow::before{background:rgba(239,230,218,.15)}
+  .sovereignty-section .section-title{color:var(--bg)}
+  .sovereignty-section .section-intro{color:rgba(239,230,218,.6)}
+  .sovereignty-section .sovereignty-quote p{color:rgba(239,230,218,.85)}
+  .sovereignty-section .sovereignty-quote cite{color:rgba(239,230,218,.35)}
   .triptych{display:grid;grid-template-columns:repeat(3,1fr);margin-top:4rem}
   .tc{padding:3.5rem 3rem;min-height:420px;display:flex;flex-direction:column;position:relative;overflow:hidden}
   .tc.noa{background:var(--ink)}
@@ -179,7 +191,7 @@
   .sovereignty-quote cite{display:block;margin-top:.8rem;font-family:var(--f-mono);font-style:normal;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 
   /* AI & STORYTELLING */
-  .story-section{background:var(--bg);padding:7rem 0}
+  .story-section{background:var(--bg3);padding:7rem 0}
   .story-box{background:var(--bg2);border:1px solid var(--hair);padding:1.8rem 2rem}
   .story-box .box-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem}
   .story-box p{font-size:.85rem;color:var(--ink2);line-height:1.75;max-width:100%}
@@ -191,7 +203,7 @@
   .story-quote-large cite{font-family:var(--f-mono);font-style:normal;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-top:.8rem}
 
   /* INTERVIEWS VS SURVEY */
-  .comparison-section{background:var(--bg2);padding:7rem 0}
+  .comparison-section{background:var(--bg3);padding:7rem 0}
   .comparison-cols{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--hair);margin-top:4rem}
   .comp-col{padding:2.5rem}
   .comp-col.interviews{background:var(--ink)}
@@ -941,34 +953,27 @@
 <!-- SELF REFLECTION -->
 <section class="intro-section" id="s-reflection" data-label="Self Reflection">
   <div class="c">
-    <div class="intro-grid fi">
-      <div>
-        <div class="intro-eyebrow">Chapter Eight · Researcher Positionality</div>
-        <h2 class="intro-title">Self<br><em style="font-style:italic">Reflection</em></h2>
-        <div class="intro-body">
-          <p>I came into this research as someone who had spent most of her life not claiming her Māori identity. I felt I wasn't the right skin colour. Couldn't speak te reo. Had been told not to trust Māori. This research asked me to sit with that discomfort — and to be honest about it.</p>
-          <p>Doing this work changed me. I began to understand that the silence I carried was not my failure — it was the design of colonisation. And that the stakes of AI getting this wrong are not abstract. They are personal.</p>
-        </div>
+    <div class="intro-eyebrow" style="margin-bottom:2rem">Beyond the Research · What I Discovered Along the Way</div>
+    <h2 class="intro-title" style="color:var(--bg);margin-bottom:3rem">Personal<br><em style="font-style:italic">Reflection</em></h2>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:rgba(239,230,218,.08)" class="fi">
+      <div style="background:rgba(239,230,218,.04);padding:2.5rem 2.2rem">
+        <span style="font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:1rem">The Language That Was Lost</span>
+        <h3 style="font-family:var(--f-disp);font-size:1.3rem;color:var(--bg);margin-bottom:1rem;line-height:1.2">What This Means For Me</h3>
+        <p style="font-size:.88rem;color:rgba(239,230,218,.65);line-height:1.82;margin-bottom:1rem">Te reo stopped being spoken in my whānau when my great-grandfather returned from World War One. Like many Māori men of his generation, the world he came back to made speaking te reo unsafe and actively discouraged.</p>
+        <p style="font-size:.88rem;color:rgba(239,230,218,.65);line-height:1.82">My nana felt that loss. At 60, she tried to learn te reo. That image stays with me — the courage it takes to reclaim something taken so long ago. This research gave me language to understand that our disconnection wasn't accidental. It was colonial.</p>
       </div>
-      <div>
-        <div class="gap-cards">
-          <div class="gap-card">
-            <span class="gap-card-label">My Positionality</span>
-            <p>I hold dual citizenship in this space — Māori whakapapa and Pākehā upbringing. That in-between position shaped both my questions and my limitations.</p>
-          </div>
-          <div class="gap-card">
-            <span class="gap-card-label">What I Learned About Myself</span>
-            <p>The shame of not knowing te reo is something AI cannot fix — and may make worse. Reconnection requires human relationship, not a chatbot.</p>
-          </div>
-          <div class="gap-card">
-            <span class="gap-card-label">What Changed</span>
-            <p>I entered this research asking an academic question. I left it asking a personal one: <strong>what responsibility do I carry, now that I know what I know?</strong></p>
-          </div>
-          <div class="gap-card">
-            <span class="gap-card-label">The Limitation I Carry</span>
-            <p>I am not a fluent speaker of te reo Māori. I have tried to hold that honestly throughout — leaning on those who are, and not speaking over them.</p>
-          </div>
-        </div>
+      <div style="background:rgba(239,230,218,.04);padding:2.5rem 2.2rem">
+        <span style="font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:1rem">A Career Move</span>
+        <h3 style="font-family:var(--f-disp);font-size:1.3rem;color:var(--bg);margin-bottom:1rem;line-height:1.2">Aligned With My Kaupapa</h3>
+        <p style="font-size:.88rem;color:rgba(239,230,218,.65);line-height:1.82;margin-bottom:1rem">During this research, I began consulting as an IT Project Manager with OSACO Group, working on EchoMind — an AI avatar product built for law enforcement training. Part of my role involved investigating ethical AI considerations aligned with Hapai Te Hauora.</p>
+        <p style="font-size:.88rem;color:rgba(239,230,218,.65);line-height:1.82">For the first time, my professional work and my cultural values weren't pulling in opposite directions. That alignment opened up the Māori tech space — not just as a topic to research, but as a world I now operate in.</p>
+      </div>
+      <div style="background:rgba(239,230,218,.04);padding:2.5rem 2.2rem">
+        <span style="font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:1rem">NRX Auaha &amp; The Transformation Circle</span>
+        <h3 style="font-family:var(--f-disp);font-size:1.3rem;color:var(--bg);margin-bottom:1rem;line-height:1.2">Building the Bridge</h3>
+        <p style="font-size:.88rem;color:rgba(239,230,218,.65);line-height:1.82;margin-bottom:1rem">One of the most concrete things to come out of this thesis is NRX Auaha. I launched the business, built the website — which hosts thesis information publicly so others can benefit — and created the Transformation Circle.</p>
+        <p style="font-size:.88rem;color:rgba(239,230,218,.65);line-height:1.82">The Transformation Circle is a programme designed to help people transition into tech, drawing directly on what I've learned. It is the practical expression of everything this research stands for.</p>
       </div>
     </div>
   </div>
