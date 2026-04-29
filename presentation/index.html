@@ -158,6 +158,7 @@
   .fw-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
   .fw-list li{display:flex;gap:12px;font-size:.87rem;color:var(--ink);line-height:1.6}
   .fw-list li::before{content:'—';color:var(--hair);flex-shrink:0}
+  .fw-list--aligned li strong{min-width:130px;display:inline-block;flex-shrink:0}
 
   /* RESEARCH QUESTION */
   .rq-section{background:var(--ink);padding:7rem 0}
@@ -579,11 +580,11 @@
       <div class="fw-card">
         <div class="fw-head"><h3>Te Ara Tika</h3><div class="fw-sub">Kaupapa Māori Ethical Framework</div></div>
         <div class="fw-body">
-          <ul class="fw-list">
-            <li><strong>Whakapapa</strong> — Genuine relationships, honouring connection to people, place, and lineage</li>
-            <li><strong>Tika</strong> — Integrity across all aspects of the research</li>
-            <li><strong>Manaakitanga</strong> — Space that values cultural background, where participants can share honestly</li>
-            <li><strong>Mana</strong> — Honouring participants and their words with the respect they deserve</li>
+          <ul class="fw-list fw-list--aligned">
+            <li><strong>Whakapapa</strong>Genuine relationships, honouring connection to people, place, and lineage</li>
+            <li><strong>Tika</strong>Integrity across all aspects of the research</li>
+            <li><strong>Manaakitanga</strong>Space that values cultural background, where participants can share honestly</li>
+            <li><strong>Mana</strong>Honouring participants and their words with the respect they deserve</li>
           </ul>
         </div>
       </div>
